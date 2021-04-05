@@ -1,5 +1,5 @@
-use actix_files as fs;
-use actix_web::{web, App, HttpResponse, HttpRequest, HttpServer, Responder};
+use actix_files::Files;
+use actix_web::{web, App, HttpServer};
 use tera::{Tera, Context}; 
 pub mod requestHandler;
 
@@ -18,12 +18,14 @@ async fn main() -> std::io::Result<()> {
 
         App::new()
             .data(requestHandler::AppData {tmpl: tera})
-            .route("/hello", web::get().to(requestHandler::index))
-            .route("/again", web::get().to(requestHandler::index2))
-            .service(requestHandler::index3)
-            .service(web::resource("tmpl/{name}").route(web::get().to(requestHandler::index4)))
+            .route("/hello", web::get().to(requestHandler::index)) // different routes 
+            .route("/again", web::get().to(requestHandler::index2)) 
+            .service(requestHandler::index3) // not sure whats going on with this
+            .service(web::resource("tmpl/{name}").route(web::get().to(requestHandler::index4))) // use of template examples 
+            .service(Files::new("/", "./static/root/").index_file("index.html")) // server up a static page 
+
     })
-    .bind("127.0.0.1:8088")?
+    .bind("127.0.0.1:8080")?
     .run()
     .await
 }
