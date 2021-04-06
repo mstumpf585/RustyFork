@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="MWS Portfolio" content="">
+    <meta name="Michael Stumpf" content="">
+
+    <title>Michael Stumpf Portfolio</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+    
+<body>
+
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-   times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >Michael Stumpf</a>
+            </li>
+            <li>
+                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+            </li>
+            <li>
+                <a href="Tech.html" onclick = $("#menu-close").click(); >Tech Projects</a>
+            </li>
+            <li>
+                <a href="" onclick = $("#menu-close").click(); >Art Portfolio</a>
+            </li>
+            <li>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Header -->
+    <header id="top" class="header2">
+        <section id="about" class="about darkolivegreen-bg">
+            <div class="text-vertical-left">
+                <h1>Tech Projects and Hacks</h1>
+                <h3> Collection of My Previous Projects</h3>
+            </div>
+        </section>
+    </header>
+    
+     <!-- Tech table -->
+    <section id="tech-text-table" class="tech-table">
+        <div class="tech-text-center container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-lg-8 col-xl-8">
+                    <a href= "img/pokeBattleSimulator.jpg"><img class="img-portfolio img-responsive" src="img/pokeBattleSimulator.jpg"></a>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4">
+                    <h1>The picture above is a screen shot from a game created using MIPS assembly language using the MARS MIPS assembler and runtime simulator. This was a final project for Computer engineering 351 Microprocessors. The overall goal was to be able to recreate a Pokémon battle from Nintendo’s famous franchise.  The .asm file can be found on my github repo click the picture above to go to github.
+                    </h1>
+                </div> 
+            </div><!-- end row one -->
+            <br>
+            <div class="row">
+                <div class="col-md-8 col-lg-8 col-xl-8">
+                    <a href="img/walli.jpg"> <img class="img-portfolio img-responsive" src="img/walli.jpg"></a>
+                </div>
+                <div class="col-mg-4 col-lg-4 col-xl-4">
+                    <h1> This project was inspired by the movie Wall-e I wanted to try and recreated the actual robot in the movie. Although it looks nothing like the robot from the movie this was my first prototype and first robot build. For this project I employed the use of a raspberry pi along with one of adafruits pi motor shields and led display backpack. The pi runs a python Bluetooth server that takes commands from an Android Bluetooth client app that I had created. The pi then sent different signals to either the motor shield or 16x8 led matrix display. Once I have the means I will hopefully improve upon this design to create a robot like Wall-e. 
+                    </h1>
+                </div>
+            </div><!-- end row 2 --> 
+            <br>
+            <div class="row">
+                <div class="col-md-8 col-lg-8 col-xl-8">
+                    <a href="img/hexy1.jpg"><img class="img-portfolio img-responsive" src="img/hexy1.jpg"></a>
+                </div>
+                <div class="col-mg-4 col-lg-4 col-xl-">
+                    <h1>In the photo above is my second robot build. For this build I decided to use a pre made hexapod robot body along with an FPGA board to control the servos. This project was a final for Computer Engineering 371 Advanced Digital Design. The overall aim of the project was to create an autonomous hexapod robot that uses ultra-sonic sensors to changes its gait and traverse past any obstacles it might encounter. Due to time constraints the autonomous functionality was not developed I am currently in the process of creating an SPI  like interface for the FPGA to complete the project.
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Michael Portfolio</strong>
+                    </h4>
+                    <p>APT 213 5720 Station Road<br>Erie, PA 16510</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (724)-882-0177</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">pro585g@gmail.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/MichaelStumpf1"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright Michael Stumpf Portfolio 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
