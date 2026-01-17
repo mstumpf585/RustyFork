@@ -1,4 +1,4 @@
-use actix_web::{web, App, HttpResponse, HttpServer, HttpRequest, Responder};
+use actix_web::{web, HttpResponse, HttpRequest, Responder};
 use actix_web::get;
 use tera::{Tera, Context}; 
 

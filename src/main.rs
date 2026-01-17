@@ -1,7 +1,8 @@
 use actix_files::Files;
 use actix_web::{web, App, HttpServer};
-use tera::{Tera, Context}; 
-pub mod requestHandler;
+use std::env;
+use tera::{Tera}; 
+pub mod request_handler;
 
 /*
 * This is the main entry point 
@@ -9,6 +10,11 @@ pub mod requestHandler;
 */
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
+
+    let args: Vec<String> = env::args().collect();
+    let address = &args[1];
+
+    println!("starting server at {}", address);
     HttpServer::new(|| {
 
         // Put our generator to the folder location of the templates. 
@@ -17,15 +23,15 @@ async fn main() -> std::io::Result<()> {
         ).unwrap(); 
 
         App::new()
-            .data(requestHandler::AppData {tmpl: tera})
-            .route("/hello", web::get().to(requestHandler::index)) // different routes 
-            .route("/again", web::get().to(requestHandler::index2)) 
-            .service(requestHandler::index3) // not sure whats going on with this
-            .service(web::resource("tmpl/{name}").route(web::get().to(requestHandler::index4))) // use of template examples 
+            .data(request_handler::AppData {tmpl: tera})
+            .route("/hello", web::get().to(request_handler::index)) // different routes 
+            .route("/again", web::get().to(request_handler::index2)) 
+            .service(request_handler::index3) // not sure whats going on with this
+            .service(web::resource("tmpl/{name}").route(web::get().to(request_handler::index4))) // use of template examples 
             .service(Files::new("/", "./static/root/").index_file("index.html")) // server up a static page 
 
     })
-    .bind("127.0.0.1:8080")?
+    .bind(address)?
     .run()
     .await
 }
